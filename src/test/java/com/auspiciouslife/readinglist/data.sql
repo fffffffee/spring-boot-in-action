@@ -1,0 +1,3 @@
+insert into BOOK values (101, 'dx', '9781617291203', 'spring in action, fourth edition', 'craig walls' ,'spring in action, fourth edition is a hands-on guide to the spring framework, updated for 4.');
+insert into BOOK values (102, 'dx', '0060589469', 'Zen and the Art of Motorcycle Maintenance', 'Robert M.Pirsig', 'An autobiographical novel telling the account of a cross-country motorcycle trip.');
+insert into BOOK values (103, 'dx', '0757302319', 'How to be Like Walt', 'Pat Williams With Jim Denney' ,'A semi-biographical account of the life of Walt Disney,describing the challenges he faced and how he faced those challenges.The reader is encouraged to consider the actions and decisions made by Disney to address similar challenges in their own life.');
