@@ -1,4 +1,4 @@
-package com.auspiciouslife.readinglist;
+package com.auspiciouslife.readinglist.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReadingList</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"></link>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>Add a book</h2>
+    <div>
+        <form th:object="${book}" th:action="@{/readingList/book}" method="POST">
+            <input type="hidden" th:field="*{id}"/>
+            <label for="title">Title:</label>
+            <input id=title type="text" name="title" size="50" th:field="*{title}"><br />
+            <label for="author">Author:</label>
+            <input id=author type="text" name="author" size="50" th:field="*{author}"><br />
+            <label for="isbn">ISBN:</label>
+            <input id=isbn type="text" name="isbn" size="15" th:field="*{isbn}"><br />
+            <label for="description">Description:</label><br />
+            <textarea id=description name="description" cols="80" rows="5" th:field="*{description}"></textarea><br />
+            <input type="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

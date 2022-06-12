@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-    <h2>Your Reading List</h2>
+    <h2>All Books</h2>
     <div th:unless="${#lists.isEmpty(books)}">
         <dl th:each="book : ${books}">
             <dt class="bookHeadline">
@@ -21,24 +21,21 @@
                   th:text="${book.description}">Description</span>
                 <span th:if="${book.description eq null}"> No description available</span>
             </dd>
+            <dt class="bookView">
+                <a th:href="${'/readingList/book/' + book.id}">View</a>
+            </dt>
+            <dt class="bookEdit">
+                <a th:href="${'/readingList/book/edit/' + book.id}">Edit</a>
+            </dt>
+            <dt class="bookDelete">
+                <a th:href="${'/readingList/delete/' + book.id}">Delete</a>
+            </dt>
         </dl>
     </div>
     <div th:if="${#lists.isEmpty(books)}">
         <p>You have no books in your book list</p>
     </div>
-    <hr />
-    <h3>Add a book</h3>
-    <form method="POST">
-        <label for="title">Title:</label>
-        <input id=title type="text" name="title" size="50"></input><br />
-        <label for="author">Author:</label>
-        <input id=author type="text" name="author" size="50"></input><br />
-        <label for="isbn">ISBN:</label>
-        <input id=isbn type="text" name="isbn" size="15"></input><br />
-        <label for="description">Description:</label><br />
-        <textarea id=description name="description" cols="80" rows="5"></textarea><br />
-        <input type="submit"></input>
-    </form>
+
 </div>
 
 </body>

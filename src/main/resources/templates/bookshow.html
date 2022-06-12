@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReadingList</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"></link>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>Book Detail</h2>
+    <div>
+        <dl th:object="${book}">
+            <dt class="bookHeadline">
+                <label>Title:</label>
+                <span th:text="${book.title}">Title</span>
+            </dt>
+            <dt>
+                <label>Author:</label>
+                <span th:text="${book.author}">Author</span>
+            </dt>
+            <dt>
+                <label>ISBN:</label>
+                <span th:text="${book.isbn}">ISBN</span>)
+            </dt>
+            <dd class="bookDescription">
+                <label>Description:</label>
+                <span th:if="${book.description}"
+                      th:text="${book.description}">Description</span>
+                <span th:if="${book.description eq null}"> No description available</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+</body>
+</html>
